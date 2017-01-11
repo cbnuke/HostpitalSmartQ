@@ -74,7 +74,7 @@
                                         <td><?= $row['pat_firstname'] . ' ' . $row['pat_lastname'] ?></td>
                                         <td><?= $row['pat_age'] ?></td>
                                         <td><?= $row['pat_tel'] ?></td>
-                                        <td>
+                                        <td class="text-center">
                                             <?php
                                             $pre_data = 'data-pat_hn="' . $row['pat_hn'] . '"';
                                             $pre_data .= 'data-pat_pass="' . $row['pat_pass'] . '"';

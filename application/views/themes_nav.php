@@ -243,47 +243,47 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                         <h4 class="modal-title">Name's Profile</h4>
                     </div>
-                    <form action="<?= base_url('register') ?>" id="addForm" class="form-horizontal" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                    <form action="<?= base_url('home/updateEmployee') ?>" class="form-horizontal" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                         <div class="modal-body">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Username</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="emp_id" class="form-control" placeholder="Username">
+                                    <input type="text" name="emp_id" class="form-control" placeholder="Username" readonly="" value="<?= $emp_info['emp_id'] ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Password</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="emp_pass" class="form-control" placeholder="Password">
+                                    <input type="password" name="emp_pass" class="form-control" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">FirstName</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="emp_firstname" class="form-control" placeholder="FirstName">
+                                    <input type="text" name="emp_firstname" class="form-control" placeholder="FirstName" value="<?= $emp_info['emp_firstname'] ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">LastName</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="emp_lastname" class="form-control" placeholder="LastName">
+                                    <input type="text" name="emp_lastname" class="form-control" placeholder="LastName" value="<?= $emp_info['emp_lastname'] ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Position</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="emp_position" class="form-control" placeholder="Position">
+                                    <input type="text" name="emp_position" class="form-control" placeholder="Position" value="<?= $emp_info['emp_position'] ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">OPD Number</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="dep_id" class="form-control" placeholder="OPD ID">
+                                    <input type="text" name="dep_id" class="form-control" placeholder="OPD ID" value="<?= $emp_info['dep_id'] ?>">
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="hidden" name="mode" value="add"/>
+                            <input type="hidden" name="current_page" value="<?= str_replace(base_url(), '', current_url()) ?>"/>
                             <button type="reset" class="btn btn-default pull-left" data-dismiss="modal">ยกเลิก</button>
                             <button type="submit" class="btn btn-primary">เพิ่ม</button>
                         </div>
@@ -308,47 +308,25 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">เมนูหลัก</li>
-                    <li>
+                    <li <?= ($page == '' || $page == 'home') ? 'class="active"' : ''; ?>><a href="<?= base_url('home') ?>"><i class="fa fa-home"></i> <span>หน้าหลัก</span></a></li>
+                    <li class="treeview <?= ($page == 'opd') ? 'active' : '' ?>">
                         <a href="#">
-                            <i class="fa fa-th"></i>
-                            <span>OPD List</span>
+                            <i class="fa fa-th"></i> <span>OPD List</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        <ul class="treeview-menu menu-open" style="display: none;">
-                            <li class=""><a href="<?= base_url('opd/id/1') ?>"><i class="fa fa-circle-o"></i> OPD 1</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/2') ?>"><i class="fa fa-circle-o"></i> OPD 2</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/3') ?>"><i class="fa fa-circle-o"></i> OPD 3</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/4') ?>"><i class="fa fa-circle-o"></i> OPD 4</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/5') ?>"><i class="fa fa-circle-o"></i> OPD 5</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/6') ?>"><i class="fa fa-circle-o"></i> OPD 6</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/7') ?>"><i class="fa fa-circle-o"></i> OPD 7</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/8') ?>"><i class="fa fa-circle-o"></i> OPD 8</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/9') ?>"><i class="fa fa-circle-o"></i> OPD 9</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/10') ?>"><i class="fa fa-circle-o"></i> OPD 10</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/11') ?>"><i class="fa fa-circle-o"></i> OPD 11</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/12') ?>"><i class="fa fa-circle-o"></i> OPD 12</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/13') ?>"><i class="fa fa-circle-o"></i> OPD 13</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/14') ?>"><i class="fa fa-circle-o"></i> OPD 14</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/15') ?>"><i class="fa fa-circle-o"></i> OPD 15</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/16') ?>"><i class="fa fa-circle-o"></i> OPD 16</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/17') ?>"><i class="fa fa-circle-o"></i> OPD 17</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/18') ?>"><i class="fa fa-circle-o"></i> OPD 18</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/19') ?>"><i class="fa fa-circle-o"></i> OPD 19</a></li>
+                        <ul class="treeview-menu">
+                            <?php foreach ($dep_info as $row) { ?>
+                                <li class="<?= ($dep_id == $row['dep_id']) ? 'active' : '' ?>"><a href="<?= base_url('opd/id/' . $row['dep_id']) ?>"><i class="fa fa-circle-o"></i> OPD <?= $row['dep_id'] ?></a></li>
+                            <?php } ?>
                         </ul>
                     </li>
-                    <li class="">
+                    <li <?= ($page == 'register') ? 'class="active"' : ''; ?>>
                         <a href="<?= base_url('register') ?>">
                             <i class="fa fa-edit"></i> <span>Register</span>
                         </a>
                     </li>
-                    <li <?= ($page == '' || $page == 'home') ? 'class="active"' : ''; ?>><a href="<?= base_url('home') ?>"><i class="fa fa-home"></i> <span>หน้าหลัก</span></a></li>
-                    <li <?= ($page == 'customer') ? 'class="active"' : ''; ?>><a href="<?= base_url('customer') ?>"><i class="fa fa-users"></i> <span>ลูกค้า</span></a></li>
-                    <li <?= ($page == 'appointment') ? 'class="active"' : ''; ?>><a href="<?= base_url('appointment') ?>"><i class="fa fa-calendar"></i> <span>ตารางนัด</span></a></li>
-                    <li class="header">ตั้งค่าระบบ</li>
-                    <li <?= ($page == 'setting' && $subpage == 'service') ? 'class="active"' : ''; ?>><a href="<?= base_url('setting/service') ?>"><i class="fa fa-shopping-cart"></i> <span>บริการ</span></a></li>
-                    <li <?= ($page == 'setting' && $subpage == 'admin') ? 'class="active"' : ''; ?>><a href="<?= base_url('setting/admin') ?>"><i class="fa fa-user"></i> <span>ผู้ดูแลระบบ</span></a></li>
                 </ul>
             </section>
             <!-- /.sidebar -->

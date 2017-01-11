@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 Class M_themes extends CI_Model {
 
-    private $title = 'Beauty & Art | Management';
+    private $title = 'Hostpital SmartQ | Management';
     private $view_name = NULL;
     private $set_alert = array();
     private $set_data = NULL;
@@ -82,7 +82,7 @@ Class M_themes extends CI_Model {
         $assets = explode('|', $this->asset_extent);
         foreach ($assets as &$row) {
             $data = $this->config->item($row);
-            $ans .="\t<!-- " . $row . " -->\n";
+            $ans .= "\t<!-- " . $row . " -->\n";
             if (count($data) > 0) {
                 foreach ($data as $type => $data_type) {
                     foreach ($data_type as $file => $place) {
@@ -94,7 +94,7 @@ Class M_themes extends CI_Model {
                                     }
                                     array_push($this->debud_data, 'Not found ' . $file);
                                 } else {
-                                    $ans.="\t" . css($file);
+                                    $ans .= "\t" . css($file);
                                 }
                             } else if ($type == "js") {
                                 if (!file_exists(js_path() . $file)) {
@@ -103,7 +103,7 @@ Class M_themes extends CI_Model {
                                     }
                                     array_push($this->debud_data, 'Not found ' . $file);
                                 } else {
-                                    $ans.="\t" . js($file);
+                                    $ans .= "\t" . js($file);
                                 }
                             }
                         }
@@ -116,7 +116,7 @@ Class M_themes extends CI_Model {
                 array_push($this->debud_data, 'Not found ' . $row . ' in config file');
             }
         }
-        $ans .="\t<!-- End Auto Load -->\n";
+        $ans .= "\t<!-- End Auto Load -->\n";
         return $ans;
     }
 
@@ -158,9 +158,13 @@ Class M_themes extends CI_Model {
         $data_nav['debug'] = $this->debud_data;
         $data_nav['page'] = $this->uri->segment(1);
         $data_nav['subpage'] = $this->uri->segment(2);
+        $data_nav['dep_id'] = $this->uri->segment(3);
+        $data_nav['dep_info'] = $this->db->get('department')->result_array();
 
-        $data_nav['name'] = $this->session->userdata('emp_firstname').' '.$this->session->userdata('emp_lastname');
+        $data_nav['name'] = $this->session->userdata('emp_firstname') . ' ' . $this->session->userdata('emp_lastname');
         $data_nav['position'] = $this->session->userdata('emp_position');
+
+        $data_nav['emp_info'] = $this->db->get_where('employee', array('emp_id' => $this->session->userdata('emp_id')))->first_row('array');
 
         //Load Notifications to nav
         $id_users = $this->session->userdata('id_users');

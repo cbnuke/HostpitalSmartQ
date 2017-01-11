@@ -5,7 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Hostpital SmartQ | Management</title>
         <!-- Tell the browser to be responsive to screen width -->
+        <meta name="application-name" content="HoSQ"/>
+        <meta name="apple-mobile-web-app-title" content="HoSQ"/>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" href="<?= img_url() . 'logo.png' ?>" />
         <!-- Bootstrap 3.3.6 -->
         <?= css('bootstrap.min.css') ?>
         <!-- Font Awesome -->
@@ -25,6 +28,7 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo animated bounce">
+                <img src="<?= img_url() . 'logo.png' ?>"/><p></p>
                 <?= anchor('login', '<b>Hostpital</b> SmartQ') ?>
             </div><!-- /.login-logo -->
             <div class="login-box-body">
