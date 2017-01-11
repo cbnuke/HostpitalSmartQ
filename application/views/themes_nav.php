@@ -250,12 +250,34 @@
                 <ul class="sidebar-menu">
                     <li class="header">เมนูหลัก</li>
                     <li>
-                        <a href="pages/widgets.html">
-                            <i class="fa fa-th"></i> <span>OPD List</span>
+                        <a href="#">
+                            <i class="fa fa-th"></i>
+                            <span>OPD List</span>
                             <span class="pull-right-container">
-                                <small class="label pull-right bg-green">new</small>
+                                <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
+                        <ul class="treeview-menu menu-open" style="display: none;">
+                            <li class=""><a href="<?= base_url('opd/id/1')?>"><i class="fa fa-circle-o"></i> OPD 1</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/2')?>"><i class="fa fa-circle-o"></i> OPD 2</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/3')?>"><i class="fa fa-circle-o"></i> OPD 3</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/4')?>"><i class="fa fa-circle-o"></i> OPD 4</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/5')?>"><i class="fa fa-circle-o"></i> OPD 5</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/6')?>"><i class="fa fa-circle-o"></i> OPD 6</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/7')?>"><i class="fa fa-circle-o"></i> OPD 7</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/8')?>"><i class="fa fa-circle-o"></i> OPD 8</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/9')?>"><i class="fa fa-circle-o"></i> OPD 9</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/10')?>"><i class="fa fa-circle-o"></i> OPD 10</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/11')?>"><i class="fa fa-circle-o"></i> OPD 11</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/12')?>"><i class="fa fa-circle-o"></i> OPD 12</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/13')?>"><i class="fa fa-circle-o"></i> OPD 13</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/14')?>"><i class="fa fa-circle-o"></i> OPD 14</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/15')?>"><i class="fa fa-circle-o"></i> OPD 15</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/16')?>"><i class="fa fa-circle-o"></i> OPD 16</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/17')?>"><i class="fa fa-circle-o"></i> OPD 17</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/18')?>"><i class="fa fa-circle-o"></i> OPD 18</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/19')?>"><i class="fa fa-circle-o"></i> OPD 19</a></li>
+                        </ul>
                     </li>
                     <li class="">
                         <a href="<?= base_url('home/test')?>">
