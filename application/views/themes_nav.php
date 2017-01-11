@@ -222,6 +222,9 @@
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat" data-toggle="modal" data-target="#edit-profile">Profile</a>
+                                    </div>
                                     <div class="pull-right">
                                         <?= anchor('logout', 'ออกระบบ', array('class' => 'btn btn-default btn-flat')) ?>
                                     </div>
@@ -232,6 +235,62 @@
                 </div>
             </nav>
         </header>
+
+        <div id="edit-profile" class="modal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">Name's Profile</h4>
+                    </div>
+                    <form action="<?= base_url('register') ?>" id="addForm" class="form-horizontal" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Username</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="emp_id" class="form-control" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="emp_pass" class="form-control" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">FirstName</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="emp_firstname" class="form-control" placeholder="FirstName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">LastName</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="emp_lastname" class="form-control" placeholder="LastName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Position</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="emp_position" class="form-control" placeholder="Position">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">OPD Number</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="dep_id" class="form-control" placeholder="OPD ID">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="mode" value="add"/>
+                            <button type="reset" class="btn btn-default pull-left" data-dismiss="modal">ยกเลิก</button>
+                            <button type="submit" class="btn btn-primary">เพิ่ม</button>
+                        </div>
+                    </form>        
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -258,29 +317,29 @@
                             </span>
                         </a>
                         <ul class="treeview-menu menu-open" style="display: none;">
-                            <li class=""><a href="<?= base_url('opd/id/1')?>"><i class="fa fa-circle-o"></i> OPD 1</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/2')?>"><i class="fa fa-circle-o"></i> OPD 2</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/3')?>"><i class="fa fa-circle-o"></i> OPD 3</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/4')?>"><i class="fa fa-circle-o"></i> OPD 4</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/5')?>"><i class="fa fa-circle-o"></i> OPD 5</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/6')?>"><i class="fa fa-circle-o"></i> OPD 6</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/7')?>"><i class="fa fa-circle-o"></i> OPD 7</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/8')?>"><i class="fa fa-circle-o"></i> OPD 8</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/9')?>"><i class="fa fa-circle-o"></i> OPD 9</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/10')?>"><i class="fa fa-circle-o"></i> OPD 10</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/11')?>"><i class="fa fa-circle-o"></i> OPD 11</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/12')?>"><i class="fa fa-circle-o"></i> OPD 12</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/13')?>"><i class="fa fa-circle-o"></i> OPD 13</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/14')?>"><i class="fa fa-circle-o"></i> OPD 14</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/15')?>"><i class="fa fa-circle-o"></i> OPD 15</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/16')?>"><i class="fa fa-circle-o"></i> OPD 16</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/17')?>"><i class="fa fa-circle-o"></i> OPD 17</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/18')?>"><i class="fa fa-circle-o"></i> OPD 18</a></li>
-                            <li class=""><a href="<?= base_url('opd/id/19')?>"><i class="fa fa-circle-o"></i> OPD 19</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/1') ?>"><i class="fa fa-circle-o"></i> OPD 1</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/2') ?>"><i class="fa fa-circle-o"></i> OPD 2</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/3') ?>"><i class="fa fa-circle-o"></i> OPD 3</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/4') ?>"><i class="fa fa-circle-o"></i> OPD 4</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/5') ?>"><i class="fa fa-circle-o"></i> OPD 5</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/6') ?>"><i class="fa fa-circle-o"></i> OPD 6</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/7') ?>"><i class="fa fa-circle-o"></i> OPD 7</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/8') ?>"><i class="fa fa-circle-o"></i> OPD 8</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/9') ?>"><i class="fa fa-circle-o"></i> OPD 9</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/10') ?>"><i class="fa fa-circle-o"></i> OPD 10</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/11') ?>"><i class="fa fa-circle-o"></i> OPD 11</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/12') ?>"><i class="fa fa-circle-o"></i> OPD 12</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/13') ?>"><i class="fa fa-circle-o"></i> OPD 13</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/14') ?>"><i class="fa fa-circle-o"></i> OPD 14</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/15') ?>"><i class="fa fa-circle-o"></i> OPD 15</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/16') ?>"><i class="fa fa-circle-o"></i> OPD 16</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/17') ?>"><i class="fa fa-circle-o"></i> OPD 17</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/18') ?>"><i class="fa fa-circle-o"></i> OPD 18</a></li>
+                            <li class=""><a href="<?= base_url('opd/id/19') ?>"><i class="fa fa-circle-o"></i> OPD 19</a></li>
                         </ul>
                     </li>
                     <li class="">
-                        <a href="<?= base_url('home/test')?>">
+                        <a href="<?= base_url('home/test') ?>">
                             <i class="fa fa-edit"></i> <span>Register</span>
                         </a>
                     </li>
