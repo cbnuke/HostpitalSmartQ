@@ -16,19 +16,21 @@ class Home extends CI_Controller {
         $this->load->model('M_appointment', 'appointment');
     }
 
-    public function test(){
+    public function test() {
         $data = array(
-            'a0'=>'Test0',
-            'a1'=>'Test1',
-            'a2'=>'Test2',
-            'a4'=>'Test3',
-            'emp'=> $this->db->get('employee')->result_array()
+            'a0' => 'Test0',
+            'a1' => 'Test1',
+            'a2' => 'Test2',
+            'a4' => 'Test3',
+            'emp' => $this->db->get('employee')->result_array(),
+            'a5' => 'Test5'
         );
-        
+
         $this->themes->setContent('home/test', $data);
         $this->themes->setDebug($data);
         $this->themes->showTemplate();
     }
+
     public function index() {
         $data = array(
 //            'reserve' => $this->appointment->countAppointmentByStatus('reserve'),
