@@ -258,7 +258,7 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="pages/tables/list.htm">
+                        <a href="<?= base_url('home/test')?>">
                             <i class="fa fa-edit"></i> <span>Register</span>
                         </a>
                     </li>
