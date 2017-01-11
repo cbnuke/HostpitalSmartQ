@@ -25,7 +25,6 @@ Class M_login extends CI_Model {
     function checkUser($user, $pass) {
         $session_data = array(
             'emp_id' => 'admin',
-            'name' => 'Admin',
             'emp_firstname' => 'Admin',
             'emp_lastname' => 'Admin',
             'login' => FALSE,

@@ -11,29 +11,14 @@ class Home extends CI_Controller {
 //        $this->themes->setPermission('ALL');
 //        $this->themes->checkPermission();
 
-        $this->load->model('M_customer', 'customer');
+        $this->load->model('M_department', 'department');
         $this->load->model('M_setting', 'setting');
         $this->load->model('M_appointment', 'appointment');
     }
 
-    public function test() {
-        $data = array(
-            'a0' => 'Test0',
-            'a1' => 'Test1',
-            'a2' => 'Test2',
-            'a4' => 'Test3',
-            'emp' => $this->db->get('employee')->result_array(),
-            'a5' => 'Test5'
-        );
-
-        $this->themes->setContent('home/test', $data);
-        $this->themes->setDebug($data);
-        $this->themes->showTemplate();
-    }
-
     public function index() {
         $data = array(
-//            'reserve' => $this->appointment->countAppointmentByStatus('reserve'),
+            'checkDepartment' => $this->department->checkDepartment(),
 //            'waiting' => $this->appointment->countAppointmentByStatus('waiting'),
 //            'cancel' => $this->appointment->countAppointmentByStatus('cancel'),
 //            'complete' => $this->appointment->countAppointmentByStatus('complete'),
@@ -51,24 +36,8 @@ class Home extends CI_Controller {
 //            'service'=>$this->appointment->countAppointmentByService(),
         );
         $this->themes->setContent('home/main', $data);
-        $this->themes->setDebug($data_debug);
+        $this->themes->setDebug($data);
         $this->themes->showTemplate();
-    }
-
-    public function complete() {
-        if ($this->appointment->validationCompleteAppointment()) {
-            $POST = $this->appointment->getPostFormCompleteAppointment();
-            $this->appointment->updateAppointment($POST);
-        }
-        redirect('home');
-    }
-
-    public function cancel() {
-        if ($this->appointment->validationCancelAppointment()) {
-            $POST = $this->appointment->getPostCancelAppointment();
-            $this->appointment->cancelAppointment($POST['quotation_id']);
-        }
-        redirect('home');
     }
 
 }

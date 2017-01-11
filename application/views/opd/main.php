@@ -16,76 +16,76 @@
             <h3 class="box-title">New patient register</h3>
 
             <div class="box-tools pull-right">
-                
+
             </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
             <div class="row">
-                
+
                 <!-- /.col -->
-           <div class="box-body">
-                <div class="form-group">
-                  <label for="FirstName" class="col-sm-2 control-label">FirstName</label>
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="FirstName" class="col-sm-2 control-label">FirstName</label>
 
-                  <div class="col-sm-10">
-                    <input type="pat_FName" class="form-control" id="pat_FName" placeholder="Name">
-                  </div>
-                </div>
-               <div class="form-group">
-                  <label for="LastName" class="col-sm-2 control-label">LastName</label>
+                        <div class="col-sm-10">
+                            <input type="pat_FName" class="form-control" id="pat_FName" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName" class="col-sm-2 control-label">LastName</label>
 
-                  <div class="col-sm-10">
-                    <input type="pat_LName" class="form-control" id="pat_LName" placeholder="LastName">
-                  </div>
-                </div>
-               <div class="form-group">
-                  <label for="LastName" class="col-sm-2 control-label">LastName</label>
+                        <div class="col-sm-10">
+                            <input type="pat_LName" class="form-control" id="pat_LName" placeholder="LastName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName" class="col-sm-2 control-label">LastName</label>
 
-                  <div class="col-sm-10">
-                    <input type="pat_LName" class="form-control" id="pat_LName" placeholder="LastName">
-                  </div>
-                </div>
-               <div class="form-group">
-                  <label for="HosNum" class="col-sm-2 control-label">HN :</label>
+                        <div class="col-sm-10">
+                            <input type="pat_LName" class="form-control" id="pat_LName" placeholder="LastName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="HosNum" class="col-sm-2 control-label">HN :</label>
 
-                  <div class="col-sm-10">
-                    <input type="HosNum" class="form-control" id="HosNum" placeholder="LHospitalNumber">
-                  </div>
-                </div>
-               <div class="form-group">
-                  <label for="Age" class="col-sm-2 control-label">Age</label>
+                        <div class="col-sm-10">
+                            <input type="HosNum" class="form-control" id="HosNum" placeholder="LHospitalNumber">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Age" class="col-sm-2 control-label">Age</label>
 
-                  <div class="col-sm-10">
-                    <input type="pat_Age" class="form-control" id="pat_Age" placeholder="Age">
-                  </div>
-                </div>
-               
-               <div class="form-group">
-                  <label for="ID" class="col-sm-2 control-label">ID</label>
+                        <div class="col-sm-10">
+                            <input type="pat_Age" class="form-control" id="pat_Age" placeholder="Age">
+                        </div>
+                    </div>
 
-                  <div class="col-sm-10">
-                    <input type="pat_ID" class="form-control" id="pat_ID" placeholder="ID number">
-                  </div>
-                </div>
-               <div class="form-group">
-                  <label for="Tel" class="col-sm-2 control-label">Telephone number</label>
+                    <div class="form-group">
+                        <label for="ID" class="col-sm-2 control-label">ID</label>
 
-                  <div class="col-sm-10">
-                    <input type="pat_Tel" class="form-control" id="pat_Tel" placeholder="Telephone number">
-                  </div>
+                        <div class="col-sm-10">
+                            <input type="pat_ID" class="form-control" id="pat_ID" placeholder="ID number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Tel" class="col-sm-2 control-label">Telephone number</label>
+
+                        <div class="col-sm-10">
+                            <input type="pat_Tel" class="form-control" id="pat_Tel" placeholder="Telephone number">
+                        </div>
+                    </div>
+
                 </div>
-               
-              </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-            
-                <button type="submit" class="btn btn-primary">Submit</button>
-              
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
         </div>
     </div>
     <!-- Main content -->

@@ -159,11 +159,8 @@ Class M_themes extends CI_Model {
         $data_nav['page'] = $this->uri->segment(1);
         $data_nav['subpage'] = $this->uri->segment(2);
 
-        $data_nav['name'] = $this->session->userdata('name');
-        $data_nav['position'] = $this->session->userdata('position');
-        $data_nav['per_name'] = $this->session->userdata('per_name');
-        $data_nav['per_value'] = $this->session->userdata('per_value');
-        $data_nav['picture'] = $this->session->userdata('picture');
+        $data_nav['name'] = $this->session->userdata('emp_firstname').' '.$this->session->userdata('emp_lastname');
+        $data_nav['position'] = $this->session->userdata('emp_position');
 
         //Load Notifications to nav
         $id_users = $this->session->userdata('id_users');

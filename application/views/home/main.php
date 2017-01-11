@@ -70,7 +70,15 @@
             </div><!-- ./col -->
         </div><!-- /.row -->
         <!-- Main row -->
-
+        
+        <?php 
+            
+            foreach ($checkDepartment as $row){
+                echo $row['dep_name_th']."<br>";
+            }
+        
+        ?>
+        
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 <script>
