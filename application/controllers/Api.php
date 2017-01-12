@@ -94,4 +94,17 @@ class Api extends CI_Controller {
         }
     }
 
+    public function map($position, $target) {
+//        
+        $man_dep = $this->db->get_where('department', array('dep_id' => $position))->first_row('array');
+        $flag_dep = $this->db->get_where('department', array('dep_id' => $target))->first_row('array');
+        $data = array(
+            'man_dep_lat' => $man_dep['dep_lat'],
+            'man_dep_long' => $man_dep['dep_long'],
+            'flag_dep_lat' => $flag_dep['dep_lat'],
+            'flag_dep_long' => $flag_dep['dep_long']
+        );
+        $this->load->view('map.php', $data);
+    }
+
 }
