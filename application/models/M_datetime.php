@@ -8,6 +8,11 @@ Class M_datetime extends CI_Model {
     private $month_th = array("", "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม");
     private $month_th_MM = array("", "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.");
 
+    function calToDB($date) {
+        $temp = explode('/', $date);
+        return $temp[2] . '-' . $temp[1] . '-' . $temp[0];
+    }
+
     function DDMMYYYYLineToDBFormat($date) {
         if ($date == NULL) {
             return NULL;

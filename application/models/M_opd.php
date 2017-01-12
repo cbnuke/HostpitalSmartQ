@@ -18,7 +18,7 @@ Class M_opd extends CI_Model {
         $this->db->where('qd_status !=', 'done');
         return $this->db->get()->result_array();
     }
-    
+
     function countPatientInOpd($dep_id, $qd_status = NULL) {
         $this->db->from('queue_dep');
         $this->db->join('queue_hos', 'queue_hos.id_uni=queue_dep.id_uni');
@@ -74,6 +74,32 @@ Class M_opd extends CI_Model {
         //Update number in queue_dep
         $this->db->where('qd_id', $qd_id);
         $this->db->update('queue_dep', array('qd_order_number' => $next_number, 'qd_status' => 'wait'));
+        return TRUE;
+    }
+
+    function sendQueue($qd_id, $dep_id) {
+        //Check queue_dep
+        $queue_dep_info = $this->db->get_where('queue_dep', array('qd_id' => $qd_id))->first_row('array');
+
+        //Update queue_dep
+        $queue_dep_info['qd_status'] = 'done';
+        $this->db->where('qd_id', $qd_id);
+        $this->db->update('queue_dep', $queue_dep_info);
+
+        //Insert new queue_dep
+        $data_queue_dep = array(
+            'id_uni' => $queue_dep_info['id_uni'],
+            'dep_id' => $dep_id,
+            'qd_date' => $this->datetime->DBToDay(),
+            'qd_status' => 'register'
+        );
+        $this->db->insert('queue_dep', $data_queue_dep);
+
+        return TRUE;
+    }
+
+    function insertAppointment($data) {
+        $this->db->insert('appointment', $data);
         return TRUE;
     }
 
