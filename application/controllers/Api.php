@@ -6,8 +6,8 @@ class Api extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
         $this->load->model('M_api', 'api');
+        $this->load->model('M_department', 'department');
     }
 
     public function index() {
@@ -46,7 +46,7 @@ class Api extends CI_Controller {
 
     public function patient() {
         if ($this->input->method(TRUE) === 'POST') {
-            $hn = $this->input->post('hn');
+            $hn = $this->input->post('HN');
             $ans = $this->db->get_where('patient', array('pat_hn' => $hn))->first_row('array');
             $appoint = $this->db->get_where('appointment', array('pat_hn' => $hn))->result_array();
             header('Content-Type: application/json');
@@ -63,7 +63,8 @@ class Api extends CI_Controller {
 
     public function appoint() {
         if ($this->input->method(TRUE) === 'POST') {
-            $hn = $this->input->post('hn');
+            $hn = $this->input->post('HN');
+            $this->db->join('department', 'department.dep_id=appointment.dep_id');
             $appoint = $this->db->get_where('appointment', array('pat_hn' => $hn))->result_array();
             header('Content-Type: application/json');
             $data = array(
@@ -78,11 +79,15 @@ class Api extends CI_Controller {
 
     public function queue() {
         if ($this->input->method(TRUE) === 'POST') {
-            $hn = $this->input->post('hn');
+            $hn = $this->input->post('HN');
             $queue_hos_id = $this->db->get_where('queue_hos', array('hn' => $hn))->first_row('array');
             $uid = $queue_hos_id['id_uni'];
             $this->db->order_by('qd_id', 'DESC');
+            $this->db->join('department', 'department.dep_id=queue_dep.dep_id');
             $queue_result = $this->db->get_where('queue_dep', array('id_uni' => $uid))->result_array();
+            foreach ($queue_result as &$row) {
+                $row['current_queue'] = $this->department->checkCurrentQueue($row['dep_id']);
+            }
             header('Content-Type: application/json');
             $data = array(
                 'data' => $queue_result,
@@ -95,7 +100,6 @@ class Api extends CI_Controller {
     }
 
     public function map($position, $target) {
-//        
         $man_dep = $this->db->get_where('department', array('dep_id' => $position))->first_row('array');
         $flag_dep = $this->db->get_where('department', array('dep_id' => $target))->first_row('array');
         $data = array(

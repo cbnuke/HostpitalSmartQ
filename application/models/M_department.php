@@ -34,6 +34,18 @@ Class M_department extends CI_Model {
         return $this->db->get()->num_rows();
     }
 
+    function checkCurrentQueue($dep_id) {
+        $this->db->from('queue_dep');
+        $this->db->join('queue_hos', 'queue_hos.id_uni=queue_dep.id_uni');
+        $this->db->join('patient', 'patient.pat_hn=queue_hos.hn');
+        $this->db->where('dep_id', $dep_id);
+        $this->db->where('qd_date', $this->datetime->DBToDay());
+        $this->db->where('qd_status', 'wait');
+        $this->db->order_by('qd_order_number', 'ASC');
+        $temp = $this->db->get()->first_row('array');
+        return $temp['qd_order_number'];
+    }
+
     function insertCustomer($data) {
         $this->datetime->createDate($data);
         if ($this->db->insert('Customers', $data)) {
