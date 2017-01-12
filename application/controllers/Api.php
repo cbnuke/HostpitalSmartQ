@@ -48,10 +48,44 @@ class Api extends CI_Controller {
         if ($this->input->method(TRUE) === 'POST') {
             $hn = $this->input->post('hn');
             $ans = $this->db->get_where('patient', array('pat_hn' => $hn))->first_row('array');
+            $appoint = $this->db->get_where('appointment', array('pat_hn' => $hn))->result_array();
             header('Content-Type: application/json');
 
             $data = array(
                 'data' => $ans,
+                'status' => 'success'
+            );
+            echo json_encode($data);
+        } else {
+            show_404();
+        }
+    }
+
+    public function appoint() {
+        if ($this->input->method(TRUE) === 'POST') {
+            $hn = $this->input->post('hn');
+            $appoint = $this->db->get_where('appointment', array('pat_hn' => $hn))->result_array();
+            header('Content-Type: application/json');
+            $data = array(
+                'data' => $appoint,
+                'status' => 'success'
+            );
+            echo json_encode($data);
+        } else {
+            show_404();
+        }
+    }
+
+    public function queue() {
+        if ($this->input->method(TRUE) === 'POST') {
+            $hn = $this->input->post('hn');
+            $queue_hos_id = $this->db->get_where('queue_hos', array('hn' => $hn))->first_row('array');
+            $uid = $queue_hos_id['id_uni'];
+            $this->db->order_by('qd_id', 'DESC');
+            $queue_result = $this->db->get_where('queue_dep', array('id_uni' => $uid))->result_array();
+            header('Content-Type: application/json');
+            $data = array(
+                'data' => $queue_result,
                 'status' => 'success'
             );
             echo json_encode($data);
