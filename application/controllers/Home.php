@@ -6,10 +6,6 @@ class Home extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-//        $this->themes->checkLoginWithRedirect();
-//        $this->themes->setAssetExtent('jQuery-Form|iCheck|select2|DataTables|WYSIHTML5-Bootstrap3|datepicker|knob|flot|timepicker');
-//        $this->themes->setPermission('ALL');
-//        $this->themes->checkPermission();
 
         $this->load->model('M_department', 'department');
         $this->load->model('M_home', 'home');

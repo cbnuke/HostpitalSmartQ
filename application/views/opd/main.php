@@ -177,7 +177,7 @@
                         <div class="col-sm-10">
                             <select class="form-control" name="dep_id">
                                 <?php foreach ($checkDepartment as $row) { ?>
-                                    <option value="<?= $row['dep_id'] ?>"><?= $row['dep_name_th'] ?> (<?= $row['wait'] . '/' . $row['done'] ?>)</option>
+                                    <option value="<?= $row['dep_id'] ?>"><?= $row['dep_name_th'] ?> (รอตรวจ <?= ($row['wait']) ?>)</option>
                                 <?php } ?>
                             </select>
                         </div>

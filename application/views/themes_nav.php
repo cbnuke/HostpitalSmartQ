@@ -8,7 +8,7 @@
                 <!--Beauty & Art | Management-->
                 <span class="logo-mini"><b>Ho</b>SQ</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Hostpital</b>SmartQ</span>
+                <span class="logo-lg"><b>Hospital</b>SmartQ</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -318,7 +318,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <?php foreach ($dep_info as $row) { ?>
-                                <li class="<?= ($dep_id == $row['dep_id']) ? 'active' : '' ?>"><a href="<?= base_url('opd/id/' . $row['dep_id']) ?>"><i class="fa fa-circle-o"></i> OPD <?= $row['dep_id'] ?></a></li>
+                                <li class="<?= ($dep_id == $row['dep_id']) ? 'active' : '' ?>"><a href="<?= base_url('opd/id/' . $row['dep_id']) ?>"><i class="fa fa-circle-o"></i> <?= ($row['dep_id'] == '20') ? 'LAB' : 'OPD' . $row['dep_id'] ?></a></li>
                             <?php } ?>
                         </ul>
                     </li>

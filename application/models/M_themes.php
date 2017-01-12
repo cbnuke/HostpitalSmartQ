@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 Class M_themes extends CI_Model {
 
-    private $title = 'Hostpital SmartQ | Management';
+    private $title = 'Hospital SmartQ | Management';
     private $view_name = NULL;
     private $set_alert = array();
     private $set_data = NULL;

@@ -12,7 +12,6 @@
         </ol>
     </section>
 
-
     <!-- Main content -->
     <section class="content">
         <?php if ($flag != NULL) { ?>
@@ -123,7 +122,7 @@
                     <!-- small box -->
                     <div class="small-box <?= $css_bg ?>">
                         <div class="inner">
-                            <h3><?= $row['wait'] . '/' . $row['done'] ?></h3>
+                            <h3 style="font-size: 30px;">รอตรวจ <?= ($row['wait']) ?></h3>
                             <p>OPD <?= $row['dep_id'] ?> : <?= $row['dep_name_th'] . ' (' . $row['dep_name_en'] . ')' ?></p>
                         </div>
                         <div class="icon">

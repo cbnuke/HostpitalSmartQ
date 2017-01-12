@@ -8,8 +8,6 @@ class Register extends CI_Controller {
         parent::__construct();
         $this->themes->setAssetExtent('jQuery-Form|iCheck|select2|DataTables|WYSIHTML5-Bootstrap3|datepicker|knob|flot|timepicker');
         $this->load->model('M_patient', 'patient');
-        $this->load->model('M_setting', 'setting');
-        $this->load->model('M_appointment', 'appointment');
     }
 
     public function index() {

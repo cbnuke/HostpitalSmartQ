@@ -41,13 +41,6 @@ Class M_login extends CI_Model {
             $this->session->set_userdata($session_data);
             return TRUE;
         }
-
-//        if ($user == 'admin' && $pass == 'admin') {
-//            $this->session->set_userdata($session_data);
-//            return TRUE;
-//        } else {
-//            return FALSE;
-//        }
     }
 
     function logOut() {

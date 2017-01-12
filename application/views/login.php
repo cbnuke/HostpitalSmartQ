@@ -29,7 +29,7 @@
         <div class="login-box">
             <div class="login-logo animated bounce">
                 <img src="<?= img_url() . 'logo.png' ?>"/><p></p>
-                <?= anchor('login', '<b>Hostpital</b> SmartQ') ?>
+                <?= anchor('login', '<b>Hospital</b> SmartQ') ?>
             </div><!-- /.login-logo -->
             <div class="login-box-body">
                 <p class="login-box-msg">ตรวจสอบสิทธิ์การใช้งาน</p>
